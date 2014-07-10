@@ -1,6 +1,11 @@
 require 'sinatra'
+require 'oauth2'
 
-get '/' do
+get '/' do 
+	erb :auth
+end
+
+get '/presentation' do
 	"Hackathon Simplon YRNOW"
 end
 
