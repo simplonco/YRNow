@@ -1,5 +1,6 @@
 require 'pry'
 require 'sinatra'
+require 'oauth'
 require 'omniauth'
 require 'omniauth-google-oauth2'
 
@@ -28,8 +29,9 @@ get '/auth/google_oauth2/callback' do
   halt(401, 'Non Autorisé') unless env['omniauth.auth']
   session[:oauth_credentials] = env['omniauth.auth']['credentials']
   session[:oauth_info] = env['omniauth.auth']['info']
+  session[:user_name]= env['omniauth.auth'].info.first_name
   session[:authenticated] = true
-  redirect url('/')
+  redirect url('/home')
 end
 
 get '/presentation' do
