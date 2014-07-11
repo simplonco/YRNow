@@ -3,14 +3,16 @@ require 'sinatra'
 require 'oauth'
 require 'omniauth'
 require 'omniauth-google-oauth2'
-require 'slim'
+require 'haml'
+require 'stylus'
+require 'stylus/tilt'
 
 enable :sessions
 
 configure do
-	use Rack::Session::Cookie, :secret => Digest::SHA1.hexdigest(rand.to_s)
-	KEY='306691358040-tj1tltsv8ttd3gtmd5e11l42bej1fn2t.apps.googleusercontent.com'
-	SECRET='fm2nmcEkUEMeLYllE1pE6NKn'
+  use Rack::Session::Cookie, :secret => Digest::SHA1.hexdigest(rand.to_s)
+  KEY='306691358040-tj1tltsv8ttd3gtmd5e11l42bej1fn2t.apps.googleusercontent.com'
+  SECRET='fm2nmcEkUEMeLYllE1pE6NKn'
 end
 
 use OmniAuth::Builder do
@@ -23,7 +25,7 @@ def access_token
 end
 
 get '/' do 
-	erb :auth
+  haml :auth
 end
 
 get '/auth/google_oauth2/callback' do
@@ -40,9 +42,17 @@ get '/auth/google_oauth2/callback' do
 end
 
 get '/presentation' do
-	"Hackathon Simplon YRNOW"
+  "Hackathon Simplon YRNOW"
 end
 
 get '/home' do
-	erb :home
+  haml :home
+end
+
+get '/advice' do
+  haml :advice
+end
+
+get '/main.css' do
+  stylus :main
 end

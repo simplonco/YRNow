@@ -8,4 +8,5 @@ gem 'oauth'
 gem "omniauth"
 gem "omniauth-google-oauth2"
 gem 'zurb-foundation'
-gem 'slim'
+gem 'haml'
+gem 'stylus'

@@ -1,0 +1,51 @@
+%img{:src => "http://www.yves-rocher.fr/images/header/fr_FR/header-logo-yr.gif"}/
+%h1 Hi Jane
+.alert.alert-info
+  %h4 Please fill in your personal information
+%form.form-horizontal
+  .form-group
+    .col-xs-2
+      %label.control-label{:for => "age"} age
+    .col-xs-10
+      %input.form-control{:name => "age", :required => "", :type => "number"}/
+  .form-group
+    .col-xs-2
+      %label.control-label{:for => "eyes"} eyes color
+    .col-xs-10
+      %select.form-control{:name => "eyes_color", :required => ""}
+        %option blue
+        %option green
+        %option brown
+  .form-group
+    .col-xs-2
+      %label.control-label{:for => "hair"} hair color
+    .col-xs-10
+      %select.form-control{:name => "hair_color", :required => ""}
+        %option blond
+        %option brown
+        %option ginger
+  .form-group
+    .col-xs-2
+      %label.control-label{:for => "skin_type"} skin type
+    .col-xs-10
+      %select.form-control{:name => "skin_type"}
+        %option dry skin
+        %option oily skin
+        %option dehydrated skin
+  .form-group
+    .col-xs-12.radio
+      %label
+        %input{:name => "case", :required => "", :type => "radio", :value => "option_1"}>/
+        I have a dinner tonight
+    .col-xs-12.radio
+      .col-xs-6.radio
+        .form-group
+          %label
+            %input{:name => "case", :required => "", :type => "radio", :value => "option_2"}>/
+            I planned to take a train to go to
+      .col-xs-6.radio
+        .form-group
+          %input.form-control{:name => "custom", :required => "", :type => "text"}/
+  .form-group
+    .col-xs-4.col-xs-offset-4
+      %input.btn.btn-block.btn-primary{:required => "", :type => "submit", :value => "ok"}/

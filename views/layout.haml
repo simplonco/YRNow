@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}/
+    %title Yves Rocher
+    %link{:href => "/bootswatch/yeti/bootstrap.min.css", :rel => "stylesheet"}/
+    %script{:src => "/jquery/dist/jquery.min.js"}
+    %script{:src => "/bootstrap/dist/js/bootstrap.min.js"}
+    %script{:src => "/main.js"}
+    %link{:href => "/main.css", :rel => "stylesheet"}/
+  %body
+    .navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "/"} Yves Rocher
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li.active
+              %a{:href => "/"} Home
+            %li
+              %a{:href => "/advice"} Advice
+    .container
+      .col-xs-12
+        = yield
