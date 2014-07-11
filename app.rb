@@ -38,7 +38,6 @@ get '/auth/google_oauth2/callback' do
   session[:user_image]= env['omniauth.auth'].info.image
   session[:authenticated] = true
   redirect url('/home')
-
 end
 
 get '/presentation' do
@@ -55,4 +54,8 @@ end
 
 get '/main.css' do
   stylus :main
+end
+
+get '/liste_conseils' do
+  haml :liste_conseils
 end
