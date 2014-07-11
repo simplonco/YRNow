@@ -3,5 +3,5 @@
 %p
   | Bonjour
   = session[:user_name]
-  = session[:user_lname]
-%p Bouton recherche
+  %form{:action => "/liste_conseils", :method => "get"}
+    %button{:class => "btn"} Recherche
