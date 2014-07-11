@@ -30,6 +30,8 @@ get '/auth/google_oauth2/callback' do
   session[:oauth_credentials] = env['omniauth.auth']['credentials']
   session[:oauth_info] = env['omniauth.auth']['info']
   session[:user_name]= env['omniauth.auth'].info.first_name
+  session[:user_lname]= env['omniauth.auth'].info.last_name
+  session[:user_image]= env['omniauth.auth'].info.image
   session[:authenticated] = true
   redirect url('/home')
 end
