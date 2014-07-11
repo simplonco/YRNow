@@ -1,8 +1,9 @@
 %img{:src => "http://www.yves-rocher.fr/images/header/fr_FR/header-logo-yr.gif"}/
-%h1 Hi Jane
+%br
+%br
 .alert.alert-info
   %h4 Please fill in your personal information
-%form.form-horizontal
+%form.form-horizontal{:action => '/register', :method => 'post'}
   .form-group
     .col-xs-2
       %label.control-label{:for => "age"} age
