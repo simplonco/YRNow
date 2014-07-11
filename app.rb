@@ -3,7 +3,7 @@ require 'sinatra'
 require 'oauth'
 require 'omniauth'
 require 'omniauth-google-oauth2'
-require 'slim'
+require 'tilt-jade'
 
 enable :sessions
 
