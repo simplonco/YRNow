@@ -46,3 +46,6 @@ end
 get '/home' do
 	erb :home
 end
+  get '/liste_conseils' do 
+    erb :liste_conseils
+end
