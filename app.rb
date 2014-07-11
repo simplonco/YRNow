@@ -32,7 +32,6 @@ get '/auth/google_oauth2/callback' do
   halt(401, 'Non Autorisé') unless env['omniauth.auth']
   session[:oauth_credentials] = env['omniauth.auth']['credentials']
   session[:oauth_info] = env['omniauth.auth']['info']
-  binding.pry
   session[:user_name]= env['omniauth.auth'].info.first_name
   session[:user_lname]= env['omniauth.auth'].info.last_name
   session[:user_image]= env['omniauth.auth'].info.image
